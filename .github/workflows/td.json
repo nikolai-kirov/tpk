@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-west-3:303981612052:task-definition/my-task",
+    "taskDefinitionArn": "arn:aws:ecs:eu-west-3:303981612052:task-definition/tpk-task",
     "containerDefinitions": [
         {
             "name": "tpk-container",
-            "image": "nikolaykirov/tperk:v1.1",
+            "image": "303981612052.dkr.ecr.eu-west-3.amazonaws.com/tpk:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -18,12 +18,18 @@
             "volumesFrom": []
         }
     ],
-    "family": "my-task",
+    "family": "tpk-task",
     "executionRoleArn": "arn:aws:iam::303981612052:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
         },
@@ -41,7 +47,7 @@
     ],
     "cpu": "256",
     "memory": "512",
-    "registeredAt": "2023-08-20T15:28:47.878Z",
+    "registeredAt": "2023-08-21T11:32:51.671Z",
     "registeredBy": "arn:aws:iam::303981612052:user/nikkir",
     "tags": []
 }
