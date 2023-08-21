@@ -7,9 +7,9 @@ on:
 
 env:
   AWS_REGION: us-east-2
-  ECS_CLUSTER: my-cluster
+  ECS_CLUSTER: tpk-cluster
   CONTAINER_NAME: app
-  ECS_SERVICE: my-service
+  ECS_SERVICE: tpk-service
   ECS_TD: .github/workflows/td.json
   
 jobs:
