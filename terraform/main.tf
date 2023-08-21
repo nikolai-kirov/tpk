@@ -16,9 +16,6 @@ data "aws_subnets" "tpk_subnets" {
     name   = "vpc-id"
     values = [data.aws_vpc.tpk_vpc.id]
   }
- # tags = {
- #   Name = "tpk"  # Add a relevant tag to identify your subnets
- # }
 }
 
 
