@@ -2,7 +2,6 @@ provider "aws" {
   region  = "eu-west-3"  
 }
 
-
 data "aws_iam_role" "task_ecs" {
   name = "ecsTaskExecutionRole"
 }
@@ -17,7 +16,6 @@ data "aws_subnets" "tpk_subnets" {
     values = [data.aws_vpc.tpk_vpc.id]
   }
 }
-
 
 
 resource "aws_ecs_cluster" "tpk_cluster" {
@@ -90,13 +88,8 @@ resource "aws_lb_listener" "tpk_listener" {
   protocol          = "HTTP"
 
   default_action {
-    type = "fixed-response"
-
-    fixed_response {
-      content_type = "text/plain"
-      message_body = "Hello, ECS!"
-      status_code  = "200"
-    }
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.tpk_target_group.id
   }
 }
 
