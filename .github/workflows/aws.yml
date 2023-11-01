@@ -11,6 +11,9 @@ env:
   CONTAINER_NAME: app
   ECS_SERVICE: tpk-service
   ECS_TD: .github/workflows/td.json
+permissions:
+  id-token: write
+  contents: read
   
 jobs:
   deploy:
