@@ -7,7 +7,6 @@ ENV FLASK_APP=hello
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy the requirements file into the container at /app
 COPY requirements.txt /app/
 
 # Install any needed packages specified in requirements.txt
