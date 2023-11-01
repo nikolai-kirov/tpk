@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - master
-
+      
 env:
   AWS_REGION: eu-west-3
   ECS_CLUSTER: tpk-cluster
   CONTAINER_NAME: app
   ECS_SERVICE: tpk-service
   ECS_TD: .github/workflows/td.json
+  
 permissions:
   id-token: write
   contents: read
